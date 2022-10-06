@@ -20,6 +20,7 @@ End Code
 
         @<div class="form-horizontal">
     <h4>ต๋า2</h4>
+
     <hr />
     @Html.ValidationSummary(True, "", New With {.class = "text-danger"})
     <div class="form-group">
