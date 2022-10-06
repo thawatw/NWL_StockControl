@@ -26,7 +26,11 @@ Namespace Controllers
                                         , .XBUmnIsDelete = it.XBUmnIsDelete _
                                         , .XBUmnIsCancel = it.XBUmnIsCancel _
                                         , .XBUmnIsApprove = it.XBUmnIsApprove}).ToList
+
             Return View(oListModel)
+        End Function
+        Function SelectMenu(ptMenuCode As String) As ActionResult
+
         End Function
     End Class
 End Namespace
