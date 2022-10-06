@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StockControlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TDocTCrDT">
+          <Key>
+            <PropertyRef Name="XVCxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVCxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XICxdQty" Type="int" />
+        </EntityType>
+        <EntityType Name="TDocTCrHD">
+          <Key>
+            <PropertyRef Name="XVCxhDocNo" />
+          </Key>
+          <Property Name="XVCxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XDCxhDocDate" Type="date" />
+          <Property Name="XVCxhDocStatus" Type="nvarchar" MaxLength="1" />
+          <Property Name="XVCxhUsrCodeSave" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVCxhUsrCodeApprove" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVWahCode" Type="nvarchar" MaxLength="3" />
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVTxhRmk" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TDocTPiDT">
+          <Key>
+            <PropertyRef Name="XVPxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVPxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XIPxdQty" Type="int" />
+        </EntityType>
+        <EntityType Name="TDocTPiHD">
+          <Key>
+            <PropertyRef Name="XVPxhDocNo" />
+          </Key>
+          <Property Name="XVPxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XDPxhDocDate" Type="date" />
+          <Property Name="XVPxhDocStatus" Type="nvarchar" MaxLength="1" />
+          <Property Name="XVPxhUsrCodeSave" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVPxhUsrCodeApprove" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVPxhFrom" Type="nvarchar" MaxLength="100" />
+          <Property Name="XVPxhRmk" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TDocTTrDT">
+          <Key>
+            <PropertyRef Name="XVTxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVTxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XITxdQty" Type="int" />
+        </EntityType>
+        <EntityType Name="TDocTTrHD">
+          <Key>
+            <PropertyRef Name="XVTxhDocNo" />
+          </Key>
+          <Property Name="XVTxhDocNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XDTxhDocDate" Type="date" />
+          <Property Name="XVTxhDocStatus" Type="nvarchar" MaxLength="1" />
+          <Property Name="XVTxhUsrCodeSave" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVTxhUsrCodeApprove" Type="nvarchar" MaxLength="20" />
+          <Property Name="XVTxhWahCodeFrom" Type="nvarchar" MaxLength="3" />
+          <Property Name="XVTxhWahCodeTo" Type="nvarchar" MaxLength="3" />
+          <Property Name="XVTxhRmk" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TMnyMUserMenu">
+          <Key>
+            <PropertyRef Name="XVUsrCode" />
+            <PropertyRef Name="XVMnuCode" />
+          </Key>
+          <Property Name="XVUsrCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMnuCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XBUmnIsRead" Type="bit" />
+          <Property Name="XBUmnIsSave" Type="bit" />
+          <Property Name="XBUmnIsDelete" Type="bit" />
+          <Property Name="XBUmnIsCancel" Type="bit" />
+          <Property Name="XBUmnIsApprove" Type="bit" />
+        </EntityType>
+        <EntityType Name="TMstMBomDT">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+            <PropertyRef Name="XVMatCodeDT" />
+          </Key>
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMatCodeDT" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XIBodQty" Type="int" />
+        </EntityType>
+        <EntityType Name="TMstMBomHD">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMstMMaterial">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVMatCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMatName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TMstMMenu">
+          <Key>
+            <PropertyRef Name="XVMnuCode" />
+          </Key>
+          <Property Name="XVMnuCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVMnuName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TMstMUser">
+          <Key>
+            <PropertyRef Name="XVUsrCode" />
+          </Key>
+          <Property Name="XVUsrCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="XVUsrName" Type="nvarchar" MaxLength="100" />
+          <Property Name="XVUsrPwd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TMstMWarehouse">
+          <Key>
+            <PropertyRef Name="XVWahCode" />
+          </Key>
+          <Property Name="XVWahCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="XVWahName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="StockControlModelStoreContainer">
+          <EntitySet Name="TDocTCrDT" EntityType="Self.TDocTCrDT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDocTCrHD" EntityType="Self.TDocTCrHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDocTPiDT" EntityType="Self.TDocTPiDT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDocTPiHD" EntityType="Self.TDocTPiHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDocTTrDT" EntityType="Self.TDocTTrDT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDocTTrHD" EntityType="Self.TDocTTrHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMnyMUserMenu" EntityType="Self.TMnyMUserMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMBomDT" EntityType="Self.TMstMBomDT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMBomHD" EntityType="Self.TMstMBomHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMMaterial" EntityType="Self.TMstMMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMMenu" EntityType="Self.TMstMMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMUser" EntityType="Self.TMstMUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TMstMWarehouse" EntityType="Self.TMstMWarehouse" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StockControlModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TDocTCrDT">
+          <Key>
+            <PropertyRef Name="XVCxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVCxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XICxdQty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TDocTCrHD">
+          <Key>
+            <PropertyRef Name="XVCxhDocNo" />
+          </Key>
+          <Property Name="XVCxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XDCxhDocDate" Type="DateTime" Precision="0" />
+          <Property Name="XVCxhDocStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="XVCxhUsrCodeSave" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVCxhUsrCodeApprove" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVWahCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhRmk" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TDocTPiDT">
+          <Key>
+            <PropertyRef Name="XVPxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVPxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XIPxdQty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TDocTPiHD">
+          <Key>
+            <PropertyRef Name="XVPxhDocNo" />
+          </Key>
+          <Property Name="XVPxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XDPxhDocDate" Type="DateTime" Precision="0" />
+          <Property Name="XVPxhDocStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="XVPxhUsrCodeSave" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVPxhUsrCodeApprove" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVPxhFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XVPxhRmk" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TDocTTrDT">
+          <Key>
+            <PropertyRef Name="XVTxhDocNo" />
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVTxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XITxdQty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TDocTTrHD">
+          <Key>
+            <PropertyRef Name="XVTxhDocNo" />
+          </Key>
+          <Property Name="XVTxhDocNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XDTxhDocDate" Type="DateTime" Precision="0" />
+          <Property Name="XVTxhDocStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhUsrCodeSave" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhUsrCodeApprove" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhWahCodeFrom" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhWahCodeTo" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="XVTxhRmk" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TMnyMUserMenu">
+          <Key>
+            <PropertyRef Name="XVUsrCode" />
+            <PropertyRef Name="XVMnuCode" />
+          </Key>
+          <Property Name="XVUsrCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMnuCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XBUmnIsRead" Type="Boolean" />
+          <Property Name="XBUmnIsSave" Type="Boolean" />
+          <Property Name="XBUmnIsDelete" Type="Boolean" />
+          <Property Name="XBUmnIsCancel" Type="Boolean" />
+          <Property Name="XBUmnIsApprove" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TMstMBomDT">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+            <PropertyRef Name="XVMatCodeDT" />
+          </Key>
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMatCodeDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XIBodQty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TMstMBomHD">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMstMMaterial">
+          <Key>
+            <PropertyRef Name="XVMatCode" />
+          </Key>
+          <Property Name="XVMatCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMatName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TMstMMenu">
+          <Key>
+            <PropertyRef Name="XVMnuCode" />
+          </Key>
+          <Property Name="XVMnuCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVMnuName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TMstMUser">
+          <Key>
+            <PropertyRef Name="XVUsrCode" />
+          </Key>
+          <Property Name="XVUsrCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVUsrName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XVUsrPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TMstMWarehouse">
+          <Key>
+            <PropertyRef Name="XVWahCode" />
+          </Key>
+          <Property Name="XVWahCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XVWahName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="StockControlEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TDocTCrDT" EntityType="Self.TDocTCrDT" />
+          <EntitySet Name="TDocTCrHD" EntityType="Self.TDocTCrHD" />
+          <EntitySet Name="TDocTPiDT" EntityType="Self.TDocTPiDT" />
+          <EntitySet Name="TDocTPiHD" EntityType="Self.TDocTPiHD" />
+          <EntitySet Name="TDocTTrDT" EntityType="Self.TDocTTrDT" />
+          <EntitySet Name="TDocTTrHD" EntityType="Self.TDocTTrHD" />
+          <EntitySet Name="TMnyMUserMenu" EntityType="Self.TMnyMUserMenu" />
+          <EntitySet Name="TMstMBomDT" EntityType="Self.TMstMBomDT" />
+          <EntitySet Name="TMstMBomHD" EntityType="Self.TMstMBomHD" />
+          <EntitySet Name="TMstMMaterial" EntityType="Self.TMstMMaterial" />
+          <EntitySet Name="TMstMMenu" EntityType="Self.TMstMMenu" />
+          <EntitySet Name="TMstMUser" EntityType="Self.TMstMUser" />
+          <EntitySet Name="TMstMWarehouse" EntityType="Self.TMstMWarehouse" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StockControlModelStoreContainer" CdmEntityContainer="StockControlEntities">
+          <EntitySetMapping Name="TDocTCrDT">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTCrDT">
+              <MappingFragment StoreEntitySet="TDocTCrDT">
+                <ScalarProperty Name="XVCxhDocNo" ColumnName="XVCxhDocNo" />
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XICxdQty" ColumnName="XICxdQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDocTCrHD">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTCrHD">
+              <MappingFragment StoreEntitySet="TDocTCrHD">
+                <ScalarProperty Name="XVCxhDocNo" ColumnName="XVCxhDocNo" />
+                <ScalarProperty Name="XDCxhDocDate" ColumnName="XDCxhDocDate" />
+                <ScalarProperty Name="XVCxhDocStatus" ColumnName="XVCxhDocStatus" />
+                <ScalarProperty Name="XVCxhUsrCodeSave" ColumnName="XVCxhUsrCodeSave" />
+                <ScalarProperty Name="XVCxhUsrCodeApprove" ColumnName="XVCxhUsrCodeApprove" />
+                <ScalarProperty Name="XVWahCode" ColumnName="XVWahCode" />
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XVTxhRmk" ColumnName="XVTxhRmk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDocTPiDT">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTPiDT">
+              <MappingFragment StoreEntitySet="TDocTPiDT">
+                <ScalarProperty Name="XVPxhDocNo" ColumnName="XVPxhDocNo" />
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XIPxdQty" ColumnName="XIPxdQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDocTPiHD">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTPiHD">
+              <MappingFragment StoreEntitySet="TDocTPiHD">
+                <ScalarProperty Name="XVPxhDocNo" ColumnName="XVPxhDocNo" />
+                <ScalarProperty Name="XDPxhDocDate" ColumnName="XDPxhDocDate" />
+                <ScalarProperty Name="XVPxhDocStatus" ColumnName="XVPxhDocStatus" />
+                <ScalarProperty Name="XVPxhUsrCodeSave" ColumnName="XVPxhUsrCodeSave" />
+                <ScalarProperty Name="XVPxhUsrCodeApprove" ColumnName="XVPxhUsrCodeApprove" />
+                <ScalarProperty Name="XVPxhFrom" ColumnName="XVPxhFrom" />
+                <ScalarProperty Name="XVPxhRmk" ColumnName="XVPxhRmk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDocTTrDT">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTTrDT">
+              <MappingFragment StoreEntitySet="TDocTTrDT">
+                <ScalarProperty Name="XVTxhDocNo" ColumnName="XVTxhDocNo" />
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XITxdQty" ColumnName="XITxdQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDocTTrHD">
+            <EntityTypeMapping TypeName="StockControlModel.TDocTTrHD">
+              <MappingFragment StoreEntitySet="TDocTTrHD">
+                <ScalarProperty Name="XVTxhDocNo" ColumnName="XVTxhDocNo" />
+                <ScalarProperty Name="XDTxhDocDate" ColumnName="XDTxhDocDate" />
+                <ScalarProperty Name="XVTxhDocStatus" ColumnName="XVTxhDocStatus" />
+                <ScalarProperty Name="XVTxhUsrCodeSave" ColumnName="XVTxhUsrCodeSave" />
+                <ScalarProperty Name="XVTxhUsrCodeApprove" ColumnName="XVTxhUsrCodeApprove" />
+                <ScalarProperty Name="XVTxhWahCodeFrom" ColumnName="XVTxhWahCodeFrom" />
+                <ScalarProperty Name="XVTxhWahCodeTo" ColumnName="XVTxhWahCodeTo" />
+                <ScalarProperty Name="XVTxhRmk" ColumnName="XVTxhRmk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMnyMUserMenu">
+            <EntityTypeMapping TypeName="StockControlModel.TMnyMUserMenu">
+              <MappingFragment StoreEntitySet="TMnyMUserMenu">
+                <ScalarProperty Name="XVUsrCode" ColumnName="XVUsrCode" />
+                <ScalarProperty Name="XVMnuCode" ColumnName="XVMnuCode" />
+                <ScalarProperty Name="XBUmnIsRead" ColumnName="XBUmnIsRead" />
+                <ScalarProperty Name="XBUmnIsSave" ColumnName="XBUmnIsSave" />
+                <ScalarProperty Name="XBUmnIsDelete" ColumnName="XBUmnIsDelete" />
+                <ScalarProperty Name="XBUmnIsCancel" ColumnName="XBUmnIsCancel" />
+                <ScalarProperty Name="XBUmnIsApprove" ColumnName="XBUmnIsApprove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMBomDT">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMBomDT">
+              <MappingFragment StoreEntitySet="TMstMBomDT">
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XVMatCodeDT" ColumnName="XVMatCodeDT" />
+                <ScalarProperty Name="XIBodQty" ColumnName="XIBodQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMBomHD">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMBomHD">
+              <MappingFragment StoreEntitySet="TMstMBomHD">
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMMaterial">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMMaterial">
+              <MappingFragment StoreEntitySet="TMstMMaterial">
+                <ScalarProperty Name="XVMatCode" ColumnName="XVMatCode" />
+                <ScalarProperty Name="XVMatName" ColumnName="XVMatName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMMenu">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMMenu">
+              <MappingFragment StoreEntitySet="TMstMMenu">
+                <ScalarProperty Name="XVMnuCode" ColumnName="XVMnuCode" />
+                <ScalarProperty Name="XVMnuName" ColumnName="XVMnuName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMUser">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMUser">
+              <MappingFragment StoreEntitySet="TMstMUser">
+                <ScalarProperty Name="XVUsrCode" ColumnName="XVUsrCode" />
+                <ScalarProperty Name="XVUsrName" ColumnName="XVUsrName" />
+                <ScalarProperty Name="XVUsrPwd" ColumnName="XVUsrPwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TMstMWarehouse">
+            <EntityTypeMapping TypeName="StockControlModel.TMstMWarehouse">
+              <MappingFragment StoreEntitySet="TMstMWarehouse">
+                <ScalarProperty Name="XVWahCode" ColumnName="XVWahCode" />
+                <ScalarProperty Name="XVWahName" ColumnName="XVWahName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
