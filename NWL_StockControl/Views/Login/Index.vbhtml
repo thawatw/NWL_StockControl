@@ -179,9 +179,7 @@ End Code
             End Using
 
 
-            <div>
-                @Html.ActionLink("Back to List", "Index", New With {.htmlAttributes = New With {.class = "forgot-password"}})
-            </div>
+
 
             @*<a href="#" class="forgot-password">
                 Forgot the password?

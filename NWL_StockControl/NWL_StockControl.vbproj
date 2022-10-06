@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Controllers\LoginController.vb" />
+    <Compile Include="Controllers\MenuController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,6 +200,7 @@
     <Compile Include="Models\TMnyMUserMenu.vb">
       <DependentUpon>DAL_TMstMUser.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TMnyMUserMenuWithMenuName.vb" />
     <Compile Include="Models\TMstMBomDT.vb">
       <DependentUpon>DAL_TMstMUser.tt</DependentUpon>
     </Compile>
@@ -291,6 +293,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Login\Index.vbhtml" />
+    <Content Include="Views\Menu\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
