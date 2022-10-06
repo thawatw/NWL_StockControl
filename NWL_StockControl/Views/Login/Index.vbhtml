@@ -12,13 +12,14 @@ End Code
     <title>Index</title>
 </head>
 <body>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Using (Html.BeginForm("LoginCheck", "Login"))
         @Html.AntiForgeryToken()
 
         @<div class="form-horizontal">
-    <h4>ต๋า</h4>
+    <h4>ต๋า2</h4>
     <hr />
     @Html.ValidationSummary(True, "", New With {.class = "text-danger"})
     <div class="form-group">
